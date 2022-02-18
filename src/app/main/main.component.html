@@ -1,0 +1,8 @@
+<div class="font-mono h-screen flex flex-col justify-center items-center">
+    <h1 class="text-xl ">SEQUENCE GAME ONLINE</h1>
+    <span class="mt-10 text-lg font-mono">Enter Nickname</span>
+    <input [(ngModel)]="username" class="font-mono mt-2 w-[96vw] max-w-[24rem] text-center rounded border border-slate-500 focus:border-white focus:outline-teal-400" type="text" name="username" id="username">
+    <div class="p-6 m-2 ">
+        <span (click)="createRoom()" class="font-mono bg-teal-400 p-6 rounded-md border border-teal-400 text-white text-lg hover:bg-white hover:text-teal-400 cursor-pointer">Create New Game!</span>
+    </div>
+</div>

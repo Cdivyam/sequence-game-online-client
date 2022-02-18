@@ -1,0 +1,81 @@
+<div *ngIf="!isPlayerCards" class="relative border-2 rounded-md border-slate-600 w-[2rem] h-14 m-[1.95px] font-rounded cursor-pointer bg-white sm:w-[42px] sm:m-1 md:w-14 md:h-16" (click)="sendCardName()">
+    <div class="ml-[2px] text-left flex justify-start" *ngIf="card_name !== 'joker'">{{ cardDetails[card_name].number }}</div>
+
+    <div *ngIf="card_name !== 'joker'">
+        <img [src]="'../../assets/' + cardDetails[card_name].color+ '.png'" class="w-5 mx-auto md:w-6">
+    </div>
+    <div *ngIf="card_name === 'joker'" class="relative">
+        <div class="relative top-[50%] left-[50%] translate-y-[10%] translate-x-[-50%] md:translate-y-[2%]">
+            <img src="../../assets/spades.png" class="relative w-3 mx-auto top-[2px] md:w-4">
+            <img src="../../assets/diamonds.png" class="relative w-[11px] mx-auto rotate-90 top-[1px] left-[7.5px] md:w-4 md:left-3">
+            <img src="../../assets/hearts.png" class="relative w-3 mx-auto -rotate-90 top-[-11px] left-[-8px] md:w-4 md:top-[-14px] md:-left-3">
+            <img src="../../assets/clubs.png" class="relative w-3 mx-auto rotate-180 top-[-10px] md:w-4 md:-top-3">
+        </div>
+    </div>
+    <div *ngIf="card_name !== 'joker' && show_chip" class="absolute top-0 right-0 mr-[1px] mt-1 sm:mt-[1px]">
+        <img [src]="'../../assets/' + chipColor +'_chip.png'" alt="" class="w-3 sm:w-4 md:w-6">
+    </div>
+</div>
+
+<div *ngIf="isPlayerCards" class="border-2 rounded-md border-slate-600 w-[2rem] h-14 m-[1.5px] font-rounded cursor-pointer bg-white sm:w-11 sm:m-1 md:h-16">
+    <div class="ml-[2px] text-left flex justify-start" *ngIf="card_name !== 'joker'">{{ cardDetails[card_name].number }}</div>
+    <div *ngIf="card_name !== 'joker'">
+        <img [src]="'../../assets/' + cardDetails[card_name].color+ '.png'" class="w-5 mx-auto md:w-6">
+    </div>
+</div>
+
+<!-- <div class="card ace_clubs"></div>
+<div class="card two_clubs"></div>
+<div class="card three_clubs"></div>
+<div class="card four_clubs"></div>
+<div class="card five_clubs"></div>
+<div class="card six_clubs"></div>
+<div class="card seven_clubs"></div>
+<div class="card eight_clubs"></div>
+<div class="card nine_clubs"></div>
+<div class="card ten_clubs"></div>
+<div class="card jack_clubs"></div>
+<div class="card queen_clubs"></div>
+<div class="card king_clubs"></div>
+<br />
+<div class="card ace_hearts"></div>
+<div class="card two_hearts"></div>
+<div class="card three_hearts"></div>
+<div class="card four_hearts"></div>
+<div class="card five_hearts"></div>
+<div class="card six_hearts"></div>
+<div class="card seven_hearts"></div>
+<div class="card eight_hearts"></div>
+<div class="card nine_hearts"></div>
+<div class="card ten_hearts"></div>
+<div class="card jack_hearts"></div>
+<div class="card queen_hearts"></div>
+<div class="card king_hearts"></div>
+<br />
+<div class="card ace_spades"></div>
+<div class="card two_spades"></div>
+<div class="card three_spades"></div>
+<div class="card four_spades"></div>
+<div class="card five_spades"></div>
+<div class="card six_spades"></div>
+<div class="card seven_spades"></div>
+<div class="card eight_spades"></div>
+<div class="card nine_spades"></div>
+<div class="card ten_spades"></div>
+<div class="card jack_spades"></div>
+<div class="card queen_spades"></div>
+<div class="card king_spades"></div>
+<br />
+<div class="card ace_diamonds"></div>
+<div class="card two_diamonds"></div>
+<div class="card three_diamonds"></div>
+<div class="card four_diamonds"></div>
+<div class="card five_diamonds"></div>
+<div class="card six_diamonds"></div>
+<div class="card seven_diamonds"></div>
+<div class="card eight_diamonds"></div>
+<div class="card nine_diamonds"></div>
+<div class="card ten_diamonds"></div>
+<div class="card jack_diamonds"></div>
+<div class="card queen_diamonds"></div>
+<div class="card king_diamonds"></div> -->

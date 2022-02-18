@@ -1,0 +1,35 @@
+<div class="max-w-md mx-auto flex flex-col justify-center items-center h-screen mt-8 sm:max-w-lg md:max-w-2xl sm:mt-0">
+    <div class="bg-emerald-600 border-2 border-black p-1 sm:p-4 md:p-8">
+        <div *ngFor="let row of boardLayout" class="flex justify-evenly">
+            <div *ngFor="let card of row">
+                <!-- <div class="border-2 rounded-md border-slate-500 w-[2.10rem] h-12 text-center m-1">
+                    {{ card.split('-')[1] }}
+                </div> -->
+                <app-playing-cards [choosen_card]="card" 
+                [isPlayerCards]="isPlayerCards"
+                [chipColor]="getTeamChipColor()"
+                (cardClick)="cardClick($event)"></app-playing-cards>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 p-1 max-w-[370px] grid grid-cols-4 gap-2 border-2 border-slate-800 sm:max-w-lg sm:mt-[10px]">
+        <div class="text-center grid grid-rows-2 gap-1" >
+            <div class="p-2 flex items-center justify-center" [ngClass]="getTeamBGColor(username)">{{username}} (You)</div>
+            <div class="bg-slate-400 p-2 flex items-center justify-center">timer</div>
+        </div>
+        <div class="p-2 bg-emerald-600 col-span-3 text-center flex items-center justify-center relative">
+            <div *ngFor="let card of playerCards" class="relative hover:-top-5" >
+                <app-playing-cards [choosen_card]="card" [isPlayerCards]="!isPlayerCards"></app-playing-cards>
+            </div>
+        </div>
+        <div class="p-2 text-center flex items-center justify-center" [ngClass]="getTeamBGColor(turnList[(currentTurnIndex+1)%(turnList.length)])">Next Turn: {{ turnList[(currentTurnIndex+1)%turnList.length] }}</div>
+        <div class="col-span-3 grid grid-cols-4 gap-1">
+            <div class="p-2 bg-red-500 text-center flex items-center justify-center">Red</div>
+            <div class="p-2 bg-green-500 text-center flex items-center justify-center">Green</div>
+            <div class="p-2 bg-indigo-500 text-center flex items-center justify-center">Blue</div>
+            <div class="bg-slate-400 text-center flex items-center justify-center">Settings</div>
+        </div>
+        <!-- <div class="p-2 bg-fuchsia-500 text-center flex items-center justify-center">Settings</div> -->
+    </div>
+</div>
